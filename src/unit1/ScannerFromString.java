@@ -16,7 +16,22 @@ public class ScannerFromString {
         s.close();
     }
 
+    public static void scanWithoutDelimiter(){
+        String input = "1 fish 2 fish red fish blue fish";
+        Scanner s = new Scanner(input);
+        while(s.hasNext()){
+            String str = s.next();
+            System.out.println(str);
+        }
+
+        s.close();
+
+    }
+
+
+
     public static  void main(String[] args){
+        //scanWithoutDelimiter();;
         scanWithDelimiter();
     }
 }
