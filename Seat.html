@@ -189,9 +189,40 @@
             for (let i = 0; i < 25; i++) {
                 const block = document.createElement('div');
                 block.className = 'block';
-                block.textContent = gridData[i];
+                block.textContent = displayName(gridData[i]);
                 grid.appendChild(block);
             }
+        }
+
+        // Map a letter to a display name
+        function displayName(value) {
+            if (value === 'A') return '孙嘉艺';
+            if (value === 'B') return '陆思文';
+            if (value === 'C') return '王一诺';
+            if (value === 'D') return '邹智远';
+            if (value === 'E') return '夏钟轩';
+            if (value === 'F') return '苏啸天';
+            if (value === 'G') return '赵子嵚';
+            if (value === 'H') return '伍欣颜';
+            if (value === 'I') return '华子瑜';
+            if (value === 'J') return '吴桑榆';
+            if (value === 'K') return '陈卓然';
+            if (value === 'L') return '张庭瑞';
+            if (value === 'M') return '龚华瑞';
+            if (value === 'N') return '张桓瑞';
+            if (value === 'O') return '陈汐澈';
+            if (value === 'P') return '葛镤灿';
+            if (value === 'Q') return '黄子轩';
+            if (value === 'R') return '陈汛扬';
+            if (value === 'S') return '张毅';
+            if (value === 'T') return '卢祈润';
+            if (value === 'U') return '季霖';
+            if (value === 'V') return '赵赟喆';
+            if (value === 'W') return '郑传键';
+            if (value === 'X') return '邹依诺';
+            if (value === 'Y') return '';
+            if (value === 'Z') return '';
+            return value;
         }
 
         // Swap first and second rows
