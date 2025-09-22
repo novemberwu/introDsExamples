@@ -32,6 +32,13 @@ public class ArrayPassByValueExample {
     }
 
     public static  void main(String[] args){
+        int y = 256;
+        int z = negative1(y);
+        System.out.println(y);
+        System.out.println(z);
+
+
+
         int[] a = new int[]{1, 2, 6};
         negative2(a);
         System.out.println("After negative2:");
