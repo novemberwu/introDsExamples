@@ -1,37 +1,33 @@
 package unit2;
 
-public class SLList {
-    private static class IntNode {
-        public int item;
-        public IntNode next;
-        public IntNode(int x, IntNode next){
+public class SLList <Type> {
+    private  static class Node <Type>{
+        public Type item;
+        public Node next;
+        public Node(Type x, Node next){
             this.item = x;
             this.next = next;
         }
     }
-    private IntNode sentinel;
+    private Node sentinel;
     private int size;
 
-    public SLList(int x) {
-        sentinel = new IntNode(-99, null);
-        sentinel.next = new IntNode(x, null);
+    public SLList(Type x) {
+        sentinel = new Node(null, null);
+        sentinel.next = new Node(x, null);
         size = 1;
     }
     public SLList(){
-        sentinel = new IntNode(-99, null);
+        sentinel = new Node(null, null);
         size =0;
     }
-    public  void addLast(int x){
-        IntNode n = this.sentinel;
-//        if ( n == null){
-//            this.first = new IntNode(x, null);
-//            size +=1;
-//            return;
-//        }
+    public  void addLast(Type x){
+        Node n = this.sentinel;
+
         while(n.next != null){
             n = n.next;
         }
-        n.next = new IntNode(x, null);
+        n.next = new Node(x, null);
         size +=1;
     }
     /*private static int size(IntNode p){
@@ -48,20 +44,24 @@ public class SLList {
     }
 
 
-    public void addFirst(int x){
-        sentinel.next = new IntNode(x, sentinel.next);
+    public void addFirst(Type x){
+        sentinel.next = new Node(x, sentinel.next);
         size +=1;
     }
 
-    public int getFirst(){
-        return sentinel.next.item;
+    public Type getFirst(){
+        return (Type)sentinel.next.item;
     }
 
     public static void main(String[] args){
 
-        SLList l = new SLList();
+        SLList<Integer> l = new SLList<>();
         l.addFirst(20);
-        System.out.println(l.size);
-        System.out.println(l.getFirst());
+        Integer i = l.getFirst();
+
+
+        SLList<String> l2 = new SLList<>("Hi");
+        l2.addFirst("World");
+        System.out.println(l2.getFirst());
     }
 }

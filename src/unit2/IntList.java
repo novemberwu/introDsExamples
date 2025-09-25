@@ -16,11 +16,6 @@ public class IntList {
         return rest.get(i-1);
     }
 
-    public int getIterative(int i ){
-        //TODO: your implementation here
-        return -1;
-    }
-
     public int size(){
         if(this.rest == null){
             return 1;
@@ -57,12 +52,24 @@ public class IntList {
         IntList l = new IntList(5, null);
         l = new IntList(10, l);
         l = new IntList(15, l);
-        int x = l.first;
-//        System.out.println(l.size());
-//        System.out.println(l.iterativeSize());
-//
-//        System.out.println(l.get(0));
-//        System.out.println(l.get(1));
-        System.out.println(l.getIterative(3));
+        int size = l.size();
+        // Before any changes
+        System.out.println("BEFORE ANY CHANGE");
+        for(int i = 0; i < size; l.get(i)){
+            System.out.println(l.get(i));
+        }
+        System.out.println("APPLY incrList");
+        IntList q = incrList(l,3);
+
+        System.out.println("APPLY incrList: original list");
+        for(int i = 0; i < size; q.get(i)){
+            System.out.println(q.get(i));
+        }
+        System.out.println("APPLY dincrList: original list");
+        for(int i = 0; i < size; l.get(i)){
+            System.out.println(l.get(i));
+        }
+
+
     }
 }
