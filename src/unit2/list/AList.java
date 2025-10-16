@@ -1,4 +1,4 @@
-package unit2;
+package unit2.list;
 
 // [11, 3 ,5, 77 , 0 , 0 ...]
 //  0, 1, 2, 3 , 4,  5
@@ -7,9 +7,6 @@ package unit2;
 // addlast (3)
 // addLast (5)
 // addLast (77)
-
-import java.lang.reflect.Array;
-import java.util.function.ObjDoubleConsumer;
 
 // conclusion: adding last, adding the new element at the position of size. increment size
 // conclusion: get last, always return the element at the position of size -1

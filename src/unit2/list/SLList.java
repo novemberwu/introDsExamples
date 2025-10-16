@@ -1,4 +1,4 @@
-package unit2;
+package unit2.list;
 
 public class SLList <Type> {
     private  static class Node <Type>{
@@ -30,6 +30,33 @@ public class SLList <Type> {
         n.next = new Node(x, null);
         size +=1;
     }
+
+    public Type removeLast(){
+
+        if(size == 0) throw new IndexOutOfBoundsException();
+
+        size --;
+
+        Node n = sentinel;
+        Node pre = sentinel;
+        while(n.next != null){
+            pre = n;
+            n = n.next;
+        }
+
+        pre.next = n.next;
+        return (Type)n.item;
+    }
+
+
+    public Type getLast(){
+        Node n = this.sentinel;
+        while(n.next != null){
+            n = n.next;
+        }
+
+        return (Type)n.item;
+    }
     /*private static int size(IntNode p){
         if(p.next == null) return 1;
         return size(p.next)+1;
@@ -53,6 +80,17 @@ public class SLList <Type> {
         return (Type)sentinel.next.item;
     }
 
+    public Type removeFirst(){
+        if(size == 0) throw new IndexOutOfBoundsException();
+
+        Node n = this.sentinel.next;
+        this.sentinel.next = n.next;
+
+        size --;
+
+        return (Type)n.item;
+    }
+
     public static void main(String[] args){
 
         SLList<Integer> l = new SLList<>();
@@ -63,5 +101,8 @@ public class SLList <Type> {
         SLList<String> l2 = new SLList<>("Hi");
         l2.addFirst("World");
         System.out.println(l2.getFirst());
+
+        String node = l2.removeLast();
+        System.out.println(node);
     }
 }

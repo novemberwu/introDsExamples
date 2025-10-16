@@ -3,6 +3,11 @@ package unit1;
 import java.util.Arrays;
 
 public class ArrayPassByValueExample {
+
+    // primitive types
+    // int , short , long , char, boolean , float , double
+    // except for above, all the other types are reference types
+    // int[] ---> reference type
     public static int negative1(int x){
         x = -x;
         return x;

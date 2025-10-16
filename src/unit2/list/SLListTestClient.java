@@ -1,4 +1,4 @@
-package unit2;
+package unit2.list;
 
 public class SLListTestClient {
     public static void main(String[] args){

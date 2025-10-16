@@ -1,4 +1,4 @@
-package unit2;
+package unit2.list;
 
 public class SpeedTestSLList {
     public static void speedTest(int count){

@@ -1,4 +1,6 @@
-package unit2;
+package unit2.list;
+
+import unit2.list.AList;
 
 public class SpeedTestAList {
 
