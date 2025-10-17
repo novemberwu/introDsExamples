@@ -2,13 +2,15 @@ package unit2.stack;
 
 public class ParentheseExamples {
     public static void main(String[] args){
-        String t1 = "[()]{}{[()()]()}";
-        String t2 = "[(])";
-        String t3 = "[[[]]]";
+        String t1 = "[()]{}{[()()]()}";//true
+        String t2 = "[(])";// false
+        String t3 = "[[[]]]";// true
+        String t4 = "[[]";// false
 
         System.out.println(parentheseMatch(t1));
         System.out.println(parentheseMatch(t2));
         System.out.println(parentheseMatch(t3));
+        System.out.println(parentheseMatch(t4));
 
 
     }
@@ -30,6 +32,6 @@ public class ParentheseExamples {
                 if(!match(c, chars[i])) return false;
             }
         }
-        return true;
+        return s.isEmpty();
     }
 }
