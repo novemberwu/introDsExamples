@@ -15,6 +15,6 @@ public class StackClientApp {
         System.out.println(s.pop());
 
 
-        s.pop();
+
     }
 }

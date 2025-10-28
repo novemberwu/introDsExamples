@@ -24,7 +24,9 @@ public class RandomQueue<Type> implements Queue<Type>{
 
     private void randomSwap(){
 
+        // [0, size-1]
         int index = (int)(Math.random() * items.size());
+        // swap items at index and size-1
         Type temp = items.get(items.size() -1);
         items.set(items.size()-1, items.get(index));
         items.set(index, temp);
@@ -41,6 +43,7 @@ public class RandomQueue<Type> implements Queue<Type>{
 
     @Override
     public Type sample() {
+        // randomly pick an index, and return the element at that index
         if(items.isEmpty()) throw new RuntimeException("Empty queue");
 
         randomSwap();

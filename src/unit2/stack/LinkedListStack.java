@@ -11,12 +11,12 @@ public class LinkedListStack<Type> implements Stack<Type>{
     }
     @Override
     public void push(Type item) {
-        items.addLast(item);
+        items.addFirst(item);
     }
 
     @Override
     public Type pop() {
-        return this.items.removeLast();
+        return this.items.removeFirst();
     }
 
     @Override
