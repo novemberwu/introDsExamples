@@ -14,7 +14,22 @@ public class ReverseSLList {
     /*
     implement the function to reverse the list, given node is the head of the list
      */
-    public static void reverse(Node list){
+    public static Node reverse(Node list){
+        Node reversed = null;
+        Node first = list;
+        Node second = first.next;
+        if(second == null) return first;
+
+        while(second != null){
+            first.next = reversed;
+            reversed = first;
+            first = second;
+            second = second.next;
+        }
+        first.next = reversed;
+        reversed = first;
+
+        return reversed;
 
     }
 
@@ -36,6 +51,10 @@ public class ReverseSLList {
         n1.next = n2;
         n2.next = n3;
         printList(head);
+
+        Node reversed = reverse(head);
+        printList(reversed);
+        // this should print list in reversed order
 
 
     }
