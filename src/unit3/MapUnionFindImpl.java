@@ -21,10 +21,10 @@ public class MapUnionFindImpl implements UnionFind{
     public void union(int p, int q) {
         int pid = find(p);
         int qid = find(q);
-
-        sets.get(pid).addAll(sets.get(qid));
-        sets.remove(qid);
-
+        if(pid != qid){
+            sets.get(pid).addAll(sets.get(qid));
+            sets.remove(qid);
+        }
     }
 
     @Override
