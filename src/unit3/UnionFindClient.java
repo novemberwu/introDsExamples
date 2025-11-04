@@ -4,7 +4,9 @@ public class UnionFindClient {
 
     public static void main(String[] args){
         //UnionFind uf = new MapUnionFindImpl(8);
-        UnionFind uf = new MapUnionFindImpl(8);
+        //Quickfind uf = new QuickFindImpl(8);
+        //Quick union
+        UnionFind uf = new QuickUnionImpl(8);
 
         // to build connected component
         //{0} {1 4 5} {2 3 6 7}
@@ -20,7 +22,7 @@ public class UnionFindClient {
         System.out.println(uf.connected(0, 4)); // false
         System.out.println(uf.connected(5, 7));//false
 
-        System.out.println(uf.connected(6, 7));//false
+        System.out.println(uf.connected(6, 7));//true
 
 
 
