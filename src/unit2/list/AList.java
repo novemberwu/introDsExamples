@@ -42,8 +42,8 @@ public class AList< Type > {
 
     public void addFirst(Type x){
         if(size == items.length){
-            resize(size +1000);
-            //resize((int) (size * RFACTOR));
+            //resize(size +1000);
+            resize((int) (size * RFACTOR));
         }
         int i = size;
         while(i > 0){
@@ -67,8 +67,8 @@ public class AList< Type > {
 
     public void addLast(Type x){
         if(size == this.items.length){
-            //resize((int) (size * RFACTOR));
-            resize(size + 1000);
+            resize((int) (size * RFACTOR));
+            //resize(size + 1000);
         }
         this.items[size] = x;
         size += 1;

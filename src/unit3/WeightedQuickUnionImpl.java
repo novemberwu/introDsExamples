@@ -2,13 +2,14 @@ package unit3;
 
 public class WeightedQuickUnionImpl implements  UnionFind{
     private int[] parent;
-    private int[] sz;
-
+    //private int[] sz;//repurpose sz to be the height
+    private int[] height;
     WeightedQuickUnionImpl(int N){
         this.parent = new int[N];
         for(int i =0; i < N; i++){
             this.parent[i] = i;
-            this.sz[i] = 1;
+            //this.sz[i] = 1;
+            this.height[i] = 0;
         }
     }
 
@@ -18,22 +19,39 @@ public class WeightedQuickUnionImpl implements  UnionFind{
         int j = find(q);
         if(i == j) return;
 
-        if(sz[i] < sz [j]){
+        if(height[i] < height[j]){
             parent[i] = j;
-            sz [j] += sz[i];
-        }else{
+        }else if(height[i] > height[j]){
             parent[j] = i;
-            sz[i] += sz[j];
-
+        }else{
+            parent[i] = j;
+            height[j]+=1;
         }
+
+//        if(sz[i] < sz [j]){
+//            parent[i] = j;
+//            sz [j] += sz[i];
+//        }else{
+//            parent[j] = i;
+//            sz[i] += sz[j];
+//
+//        }
 
     }
 
     @Override
     public int find(int p) {
+        int leaf = p;
         while( p != parent[p]){
             p = parent[p];
         }
+
+//        while( leaf != parent[leaf]){
+//            int current = leaf;
+//            leaf = parent[leaf];
+//            parent[current] = p;
+//        }
+
         return p;
     }
 
