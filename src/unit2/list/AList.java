@@ -54,13 +54,47 @@ public class AList< Type > {
         size +=1;
     }
 
+    public void add(Type x , int position){
+        if(size == items.length){
+            //resize(size +1000);
+            resize((int) (size * RFACTOR));
+        }
+        int i = size;
+        while (i > position){
+            this.items[i] = this.items[i-1];
+            i--;
+        }
+        this.items[i] = x;
+        size +=1;
+    }
+
     public Type removeFirst(){
+        if(size < this.items.length/4){
+            resize((int)(this.items.length / RFACTOR));
+        }
         int i = 0 ;
         Type result = this.items[0];
         while ( i + 1 <  size ){
             this.items[i] = this.items[i + 1];
             i++;
         }
+        size -= 1;
+        return result;
+    }
+
+    public Type remove(int position){
+        // to check if the array is too big to hold all elements
+        if(size < this.items.length/4){
+            resize((int)(this.items.length / RFACTOR));
+        }
+        // remove the item from the position
+        int i = position ;
+        Type result = this.items[position];
+
+        while( i+1 < size){
+            this.items[i]= this.items[i+1];
+        }
+
         size -= 1;
         return result;
     }
@@ -73,6 +107,8 @@ public class AList< Type > {
         this.items[size] = x;
         size += 1;
     }
+
+
 
     public Type getLast(){
         return this.items[size -1];
