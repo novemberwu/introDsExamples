@@ -28,6 +28,7 @@ public class ParentheseExamples {
             if(chars[i] == '[' || chars[i] == '(' || chars[i]== '{')
                 s.push(chars[i]);
             else {
+                if(s.isEmpty()) return false;
                 char c = s.pop();
                 if(!match(c, chars[i])) return false;
             }
