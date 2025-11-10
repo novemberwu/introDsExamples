@@ -31,6 +31,34 @@ public class SLList <Type> {
         size +=1;
     }
 
+    public void add(Type x, int position){
+        //step 1: iterate until the position
+        Node p = this.sentinel;
+        int step = 0;
+        while(step < position){
+            p = p.next;
+            step ++;
+        }
+        Node next = p.next;
+        p.next = new Node(x, next);
+
+    }
+
+    public Type remove(int position){
+        //step 1 : iterate until position -1 node
+        Node p = this.sentinel;
+        int step = 0;
+        while(step < position){
+            p = p.next;
+            step++;
+        }
+        // step 2: remove the item at position
+        Node target = p.next;
+        p.next = target.next;
+        target.next = null;
+        return (Type) target.item;
+    }
+
     public Type removeLast(){
 
         if(size == 0) throw new IndexOutOfBoundsException();
