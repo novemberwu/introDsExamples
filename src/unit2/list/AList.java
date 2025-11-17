@@ -93,9 +93,12 @@ public class AList< Type > {
 
         while( i+1 < size){
             this.items[i]= this.items[i+1];
+            i++;
         }
 
+        this.items[i] = null;// nullout for garbage collector
         size -= 1;
+
         return result;
     }
 

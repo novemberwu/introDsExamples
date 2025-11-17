@@ -1,6 +1,6 @@
 package unit2.stack;
 
-public class Test {
+public class StackApplication1 {
 
     public static void main(String[] args){
 
