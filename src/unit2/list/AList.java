@@ -55,6 +55,8 @@ public class AList< Type > {
     }
 
     public void add(Type x , int position){
+        if(position > size || position < 0)
+            throw new IllegalArgumentException("Position should between 0 and size, inclusive");
         if(size == items.length){
             //resize(size +1000);
             resize((int) (size * RFACTOR));
@@ -83,7 +85,10 @@ public class AList< Type > {
     }
 
     public Type remove(int position){
+        if(position >= size || position < 0)
+            throw new IllegalArgumentException("Position should between 0 and size -1, inclusive");
         // to check if the array is too big to hold all elements
+
         if(size < this.items.length/4){
             resize((int)(this.items.length / RFACTOR));
         }

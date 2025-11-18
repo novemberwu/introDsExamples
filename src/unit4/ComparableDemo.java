@@ -8,6 +8,8 @@ public class ComparableDemo {
     public static void main(String[] args) {
         List<StudentComparable> students = new ArrayList<>();
         students.add(new StudentComparable("Alice", 103));
+        students.add(new StudentComparable("Bob", 110));
+
         students.add(new StudentComparable("Bob", 101));
         students.add(new StudentComparable("Charlie", 105));
         students.add(new StudentComparable("David", 102));
