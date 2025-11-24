@@ -1,4 +1,6 @@
-package unit4;
+package unit4.comparable;
+
+import unit4.comparable.Student;
 
 import java.util.ArrayList;
 import java.util.List;

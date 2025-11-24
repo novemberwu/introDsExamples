@@ -1,4 +1,6 @@
-package unit4;
+package unit4.comparable;
+
+import unit4.comparable.Review;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

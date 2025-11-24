@@ -1,8 +1,4 @@
-package unit4;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+package unit4.comparable;
 
 // Define a custom class that implements Comparable
 class StudentComparable implements Comparable<StudentComparable> {
