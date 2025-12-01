@@ -1,7 +1,5 @@
 package unit4.sort;
 
-import java.util.Arrays;
-
 public class Insertion {
     public static void sort(Comparable[] a){
         int N = a.length;
@@ -38,9 +36,28 @@ public class Insertion {
         a[w] = temp;
     }
 
+    public static boolean validate(Integer[] a){
+        for(int i = 0; i < a.length ; i++){
+            if(a[i] != i){System.out.println("sort error at index"+i);
+                return  false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args){
-        Integer[] a = {3, 4, 6, 2, 1, 0};
-        sortHalfExchange(a);
-        Arrays.stream(a).forEach(System.out::println);
+        int N = Integer.parseInt(args[0]);
+        Integer[] a = new Integer[N];
+        for(int i = a.length-1; i >=0 ; i--){
+            a[a.length -1 -i] = i;
+        }
+        Stopwatch s = new Stopwatch();
+
+        sort(a);
+
+        System.out.printf("Insertion Sort on Size %d: %.3f", N, s.elapsedTime());
+
+        validate(a);
+
     }
 }

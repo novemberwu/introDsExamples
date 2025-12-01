@@ -1,9 +1,5 @@
 package unit4.sort;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class ShellSort {
     private static boolean less(Comparable v, Comparable w){
         return v.compareTo(w) < 0;
@@ -46,16 +42,17 @@ public class ShellSort {
     }
 
     public static void main(String[] args){
-        Integer[] a = new Integer[100000];
+        int N = Integer.parseInt(args[0]);
+        Integer[] a = new Integer[N];
         for(int i = a.length-1; i >=0 ; i--){
             a[a.length -1 -i] = i;
         }
-        long current = System.currentTimeMillis();
-        shellSort(a);
-        //Insertion.sort(a);
-        long endTime = System.currentTimeMillis();
-        System.out.println(endTime - current);
 
+        Stopwatch s  = new Stopwatch();
+        shellSort(a);
+
+
+        System.out.printf("Shell Sort on Size %d: %.3f", N, s.elapsedTime());
         validate(a);
 
     }
