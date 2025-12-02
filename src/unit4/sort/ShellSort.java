@@ -49,10 +49,11 @@ public class ShellSort {
         }
 
         Stopwatch s  = new Stopwatch();
+
         shellSort(a);
 
 
-        System.out.printf("Shell Sort on Size %d: %.3f", N, s.elapsedTime());
+        System.out.printf("Shell Sort on Size %d: %.6f", N, s.elapsedTime());
         validate(a);
 
     }
