@@ -1,2 +1,4 @@
-package unit2.applications;public class LRUCache {
+package unit2.applications;
+
+public class LRUCache {
 }
