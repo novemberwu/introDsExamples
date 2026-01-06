@@ -1,6 +1,7 @@
 package unit2.applications;
-import lib.StdDraw;
-import lib.StdStats;
+
+import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdStats;
 import unit2.queue.Queue;
 import unit2.queue.RandomQueue;
 import unit2.queue.ResizeArrayQueue;

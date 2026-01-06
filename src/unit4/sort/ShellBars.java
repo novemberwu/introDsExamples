@@ -16,7 +16,8 @@ package unit4.sort;
  *
  ******************************************************************************/
 
-import lib.StdDraw;
+
+import edu.princeton.cs.algs4.StdDraw;
 
 import java.awt.Font;
 

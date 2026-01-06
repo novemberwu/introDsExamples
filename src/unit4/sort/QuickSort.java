@@ -1,6 +1,7 @@
 package unit4.sort;
 
-import lib.StdRandom;
+import edu.princeton.cs.algs4.StdRandom;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
